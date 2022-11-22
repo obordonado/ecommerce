@@ -5,6 +5,7 @@ import Home from './containers/Home/Home';
 import Login from './containers/Login/login';
 import Profile from './containers/Profile/Profile';
 import Register from './containers/Register/Register';
+import Kids from './containers/Kids/Kids';
 
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         <Route path='/login' element={<Login/>}/>
         <Route path='/register' element={<Register/>}/>
         <Route path='/profile' element={<Profile/>}/>
+        <Route path='/kids' element={<Kids/>}/>
       </Routes>
       </BrowserRouter>
   
