@@ -1,20 +1,25 @@
 .body{
-    min-width: 375px;
+    min-width: 360px;
     background:linear-gradient(130deg,rgb(240, 235, 233), rgb(82, 61, 45),#555);
-    height: 100vh;    
-}
-.inicio{
-    display: inline-flex;    
+    display: flex;    
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
+    height: auto;
+}
+.inicio{
+    margin: .5em;
 }
 .card{
     width: 22em;
     height: 25em;
+    margin-top: 1.5em;
 }
 .card-body{
     background:linear-gradient(130deg,rgb(255,192,203), rgb(255,182,193),rgb(255,105,180));
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .card-title{
     text-align: center;
@@ -22,8 +27,4 @@
 .card-text{
     text-align: justify;
     height: 5em;
-}
-.col-lg-4{
-    margin-top: 5em;
-    padding: 2em;
 }
