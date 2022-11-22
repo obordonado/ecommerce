@@ -12,7 +12,9 @@ const Header = () => {
   const navegador = useNavigate();
 
   const viajar = (destino) => {
-    navegador(destino);
+    setTimeout(() => {
+      navegador(destino);      
+    }, 200);
   };
 
   const out =()=>{

@@ -1,35 +1,33 @@
 .container{
+    box-sizing: border-box;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: center;
+    justify-content: space-evenly;
+    min-width: 360px;
     height: 100vh;
     width: 100vw;
-    min-width: 360px;
 }
 .card{
     margin-top: 3em;
   }
+.card-body{
+  background:linear-gradient(130deg,rgb(255,192,203), rgb(255,182,193),rgb(255,105,180));
+}
   .card-title{
     text-align: center;
   }
-  .card-body{
-    background:linear-gradient(130deg,rgb(255,192,203), rgb(255,182,193),rgb(255,105,180));
-  }
   .card-text{
     text-align: justify;
-    height: 8em;
+    // height: 8em;
   }
-  .helado{
-    max-width: 15em;
-    max-height: 15em;
-    margin-left: 2em;
-  }
-  .waffle{
-    height: 15em;
-  }
-  .small-text-bottom{
-    margin-top: 3em;
-    font-size: x-small;
-    text-align: center;
-  }
+//   .card-img-top{
+//     max-width: 118em;
+//     max-height: 15em;   
+//   }
+// //   .helado{
+// //     height: 15em;
+// //   }
+//   .waffle {
+//     height: 15em;
+//   }

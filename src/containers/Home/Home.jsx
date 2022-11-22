@@ -1,6 +1,5 @@
 import React from 'react'
 import './Home.scss'
-import 'bootstrap/dist/css/bootstrap-grid.min.css'
 
 const Home = () => {
   return (
@@ -41,14 +40,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-    
-     <div className="row bottom">
-
-      <div className="col">
-      <div className="small-text-bottom">© 1998-2022 Love IceCream SA Todos los derechos reservados.
-      </div>
-      </div>
-   </div>
 </div>
 
   )
