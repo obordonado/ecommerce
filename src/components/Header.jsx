@@ -16,7 +16,7 @@ const Header = () => {
   };
 
   const out =()=>{
-    dispatch(logout);
+    dispatch(logout());
     viajar("/");
   }
 

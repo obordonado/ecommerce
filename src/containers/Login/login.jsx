@@ -15,8 +15,6 @@ const login = () => {
   const dispatch = useDispatch();
   
   const credenciales = useSelector(userData);
-  // console.log(credenciales);
-  
   
   const updateCredentials = (e) => {
     setCredentials(
@@ -31,7 +29,7 @@ useEffect(()=>{
   if(credenciales?.token !== ''){
     setTimeout(() => {
       navigate("/login");
-    }, 10000);
+    }, 5000);
     
   };
 },[]);
@@ -43,16 +41,11 @@ const logeame = () => {
       email: credentials.email,
       password: credentials.password
     }
-    ));
+    ));    
+  navigate("/");       
+  };
     
-    // setTimeout(()=>{
-      //   navigate("/");
-      // },5000)
-      
-    };
-    
-    console.log(credentials);
-    return (
+  return (
     
   <div className='login'>
 
