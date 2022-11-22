@@ -1,8 +1,37 @@
-.home{
+.container{
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    background-color: #aaa;
-    height: 40em;
+    // background-color: #aaa;
+    // height: 100vh;
+    width: 100vw;
     min-width: 320px;
 }
+.card{
+    margin-top: 3em;
+  }
+  .card-title{
+    text-align: center;
+  }
+  .card-body{
+    background:linear-gradient(130deg,rgb(255,192,203), rgb(255,182,193),rgb(255,105,180));
+  }
+  .card-text{
+    text-align: justify;
+    height: 8em;
+  }
+  .helado{
+    max-width: 15em;
+    max-height: 15em;
+    margin-left: 2em;
+  }
+  .waffle{
+    height: 15em;
+  }
+  .small-text-bottom{
+    margin-top: 3em;
+    font-size: x-small;
+    text-align: center;
+  }
+  

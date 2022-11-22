@@ -8,8 +8,6 @@ import { userData,  logout } from '../containers/userSlice'
 const Header = () => {
 
   const credentials = useSelector(userData);
-  // console.log(credentials);
-
   const dispatch = useDispatch();
   const navegador = useNavigate();
 
@@ -17,13 +15,15 @@ const Header = () => {
     navegador(destino);
   };
 
+  const out =()=>{
+    dispatch(logout);
+    viajar("/");
+  }
 
-// useEffect(()=>{
-  
-//   console.log("este es el log de useffect", credentials.token);
-    
-  
+// useEffect(()=>{ 
+//   console.log("este es el log de useffect", credentials.token);  
 // });
+
 
   if(credentials.token === "") {
 
@@ -48,15 +48,14 @@ const Header = () => {
 
         </div>
       </div>
-
-
-
     )
+
   }else {
+    
     return(
       <div className="header">
       <div className="textLink" onClick={()=>viajar("/profile")}> Credenciales </div>
-      <div className="textLink" onClick={()=>dispatch(logout())} > Log out </div>
+      <div className="textLink" onClick={()=>out()} > Log out </div>
     </div>
     )
   }
