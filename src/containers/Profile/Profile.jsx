@@ -1,7 +1,8 @@
 import React from 'react'
 import './Profile.scss'
-import { useSelector } from 'react-redux';
-import { userData } from '../userSlice';
+import { useSelector, useDispatch } from 'react-redux';
+import { userData, logout } from '../userSlice';
+import { useNavigate } from 'react-router';
 
 
 
@@ -9,13 +10,19 @@ import { userData } from '../userSlice';
 
 const Profile = () => {
 
-  const datosUsuario = useSelector(userData);
+  const credentials = useSelector(userData);
+  const dispatch = useDispatch();
+  const navegador = useNavigate();
+
+  const viajar =(destino) =>{
+    navegador(destino);
+  }
 
 
 
   return (
     <div className='profile'> Profile
-      <p>{datosUsuario}</p>
+      <p></p>
 
 
     </div>
