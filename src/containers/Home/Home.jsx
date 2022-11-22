@@ -32,7 +32,7 @@ const Home = () => {
 
         <div className="col-lg-4">
           <div className="card">
-            <img src="https://obordonado.github.io/web/img/ninos.jpg" className="waffle nino" alt="Infantil"/>
+            <img src="https://obordonado.github.io/web/img/helado470.jpg" className="nino" alt="Infantil"/>
             <div className="card-body">
               <h5 className="card-title">Niñ@s</h5>
               <p className="card-text">Helados de fruta perfectos para los más pequeños.<br/> ¡ 10 minutos de calma Garantizada !</p>
