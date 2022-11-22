@@ -42,9 +42,9 @@ const Header = () => {
 
         <div className="right">
 
-        <div className="icons" ><img src="https://obordonado.github.io/web/img/facebook.png" alt="facebook"/></div>
-        <div className="icons" ><img src="https://obordonado.github.io/web/img/Twitter.png" alt="Twitter"/></div>
-        <div className="icons" ><img src="https://obordonado.github.io/web/img/instagram.png" alt="instagram"/></div>
+        <div className="icons"><img src="https://obordonado.github.io/web/img/facebook.png" alt="facebook"/></div>
+        <div className="icons"><img src="https://obordonado.github.io/web/img/Twitter.png" alt="Twitter"/></div>
+        <div className="icons"><img src="https://obordonado.github.io/web/img/instagram.png" alt="instagram"/></div>
 
         </div>
       </div>
