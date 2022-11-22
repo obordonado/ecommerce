@@ -17,7 +17,6 @@ const Home = () => {
             </div>
           </div>
         </div>
-      </div>
 
         <div className="col-lg-4">
           <div className="card">
@@ -40,6 +39,7 @@ const Home = () => {
             </div>
           </div>
         </div>
+      </div>
 </div>
 
   )
