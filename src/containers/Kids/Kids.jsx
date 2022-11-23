@@ -22,7 +22,7 @@ const Kids = () => {
   
                   <div className="card-body">
                     <a href={`/product/${product.id}`} className="btn btn-primary">{product.brand}</a>                  
-                    <div className="card-title">Flavour : {product.name}</div> <br/>
+                    <div className="card-title">Flavour : {product.name}</div>
                     <h5 className="card-price">Price {product.price}0€</h5>
                   </div>
   

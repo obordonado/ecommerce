@@ -11,15 +11,20 @@ const Header = () => {
   const dispatch = useDispatch();
   const navegador = useNavigate();
 
-  const viajar = (destino) => {
+  const navigate = (destino) => {
     setTimeout(() => {
       navegador(destino);      
     }, 200);
   };
 
   const out =()=>{
-    dispatch(logout());
-    viajar("/");
+
+    setTimeout(() => {
+      dispatch(logout());    
+    }, 1000);
+    setTimeout(() => {
+      navigate("/");
+      }, 200);  
   }
 
 // useEffect(()=>{ 
@@ -36,9 +41,9 @@ const Header = () => {
         <div className="left">
 
         <img className='logo' src="https://obordonado.github.io/web/img/logo.jpg" alt="logo" />
-        <div className="textLink" onClick={()=>viajar("/")}> Home </div>
-        <div className="textLink" onClick={()=>viajar("/register")}> Register </div>
-        <div className="textLink" onClick={()=>viajar("/login")}> Login </div>
+        <div className="textLink" onClick={()=>navigate("/")}> Home </div>
+        <div className="textLink" onClick={()=>navigate("/register")}> Register </div>
+        <div className="textLink" onClick={()=>navigate("/login")}> Login </div>
 
         </div>
 
@@ -56,7 +61,7 @@ const Header = () => {
     
     return(
       <div className="header">
-      <div className="textLink" onClick={()=>viajar("/profile")}> Credenciales </div>
+      <div className="textLink" onClick={()=>navigate("/profile")}> Credenciales </div>
       <div className="textLink" onClick={()=>out()} > Log out </div>
     </div>
     )
