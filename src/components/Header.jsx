@@ -18,7 +18,6 @@ const Header = () => {
   };
 
   const out =()=>{
-
     setTimeout(() => {
       dispatch(logout());    
     }, 1000);
@@ -61,7 +60,8 @@ const Header = () => {
     
     return(
       <div className="header">
-      <div className="textLink" onClick={()=>navigate("/profile")}> Credenciales </div>
+      <img className='logo' src="https://obordonado.github.io/web/img/logo.jpg" alt="logo" />
+      <div className="textLink" onClick={()=>navigate("/profile")}> Personal settings </div>
       <div className="textLink" onClick={()=>out()} > Log out </div>
     </div>
     )
