@@ -1,11 +1,16 @@
 import React from 'react'
 import './Register.scss'
-import { useSelector } from 'react-redux';
-import { userData } from '../userSlice';
+import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router';
+
 
 
 const Register = () => {
-  const datosUsuario = useSelector(userData);
+
+
+
+
+
   return (
     <div className='register'>
      Register

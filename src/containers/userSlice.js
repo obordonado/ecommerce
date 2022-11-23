@@ -8,6 +8,14 @@ export const userSlice = createSlice({
     token: "",
   },
   reducers: {
+
+    register: (state, action) => {
+      return {
+          ...state,
+          isRegister: true,
+          successMessage: "Te has registrado correctamente"
+      };
+    },
     
     login: (state, action) => {
       return {
@@ -23,6 +31,50 @@ export const userSlice = createSlice({
     },
   },
 });
+
+
+const registerUser = (name, surname, phone_number, payment_type, address, email, password) => async (dispatch) =>{
+
+  try {
+
+    const user = await axios.post("https://devos-ecommerce.herokuapp.com/api/register",
+    {
+          name,
+          surname,
+          phone_number,
+          payment_type,
+          address,
+          email,
+          password
+      })
+      let response = user;
+
+        if (response.status === 200 ) {
+          localStorage.setItem("user", JSON.stringify(response.data));
+          dispatch(register( response.data ))
+        }
+        return response.data;   
+  } catch (error) {
+    console.log(error);    
+  }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export const loginUser = (body) => async (dispatch) =>{
 
@@ -52,7 +104,7 @@ export const logOut = ()=> {
   dispatch(logout());
 };
 
-export const {login, logout } = userSlice.actions;
+export const {login, logout, register } = userSlice.actions;
 export const userData = (state) => state.user;
 export default userSlice.reducer;
 
