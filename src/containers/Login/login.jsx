@@ -1,6 +1,6 @@
 
 import './login.scss'
-import {useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router';
 import { useSelector, useDispatch } from 'react-redux';
 import { loginUser, userData } from '../userSlice';
@@ -25,25 +25,45 @@ const login = () => {
 }    
 
 // useEffect(()=>{
-  
-//   if(credenciales?.token !== ''){
-//     setTimeout(() => {
-//       navigate("/login");
-//     }, 5000);
-    
-//   };
 // },[]);
 
 const logIn = () => {
-  
-  dispatch(loginUser(
-    {
-      email: credentials.email,
-      password: credentials.password
+  const error = () => {
+    if (
+      !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(
+        credentials.email
+      )
+    ) {
+      setMsgError("Introduce un e-mail válido");
+      return;
     }
-    ));    
-  navigate("/");       
+
+    //Esta expresión regular ayuda a validar un password (numero + letras en este caso)
+
+    if (credentials.password.length > 6) {
+      if (!/[\d()+-]/g.test(credentials.password)) {
+        setMsgError("Invalid password.");
+        return;
+      }
+    } else {
+      setMsgError("Password must be at least 6 characters.");
+      return;
+    }
   };
+
+  setMsgError("");
+
+  dispatch(
+    loginUser({
+      email: credentials.email,
+      password: credentials.password,
+    })
+  );
+
+  setTimeout(() => {
+    navigate("/");
+  }, 2000);
+};
     
   return (
     

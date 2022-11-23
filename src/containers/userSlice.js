@@ -32,24 +32,25 @@ export const loginUser = (body) => async (dispatch) =>{
 
     const decodificada = jwtDecode(user.data.token);
 
-    if(user.status ===200)
+    if(user.status === 200 )
     {     
       dispatch(login(
         {
           ...decodificada,
           token: user.data.token,
         }
-        ))
-    }    
+        ));
+
+    } 
   } catch (error) {
-    console.log(error)    
+    console.log(error);
   }  
+
 }
 
 export const logOut = ()=> {
   dispatch(logout());
 };
-
 
 export const {login, logout } = userSlice.actions;
 export const userData = (state) => state.user;
