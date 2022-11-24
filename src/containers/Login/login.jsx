@@ -66,9 +66,9 @@ const logIn = () => {
   <div className='login'>
 
     <div className='loginDesign'>
-      <input  type='email' name='email' onChange={updateCredentials} lenght='30'/>
-      <input  type='password'  name='password' onChange={updateCredentials} lenght='30'/>
-      <div className="btn" onClick={()=>logIn()}>Login</div>
+      <input  type='email' name='email' placeholder='email' onChange={updateCredentials} lenght='30'/>
+      <input  type='password'  name='password' placeholder='password' onChange={updateCredentials} lenght='30'/>
+      <div className="button" onClick={()=>logIn()}>Login</div>
       <div>{msgError}</div>
     </div>
 </div>
