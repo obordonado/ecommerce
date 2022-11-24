@@ -19,7 +19,8 @@ const Header = () => {
 
   const out =()=>{
     setTimeout(() => {
-      dispatch(logout());    
+      dispatch(logout());  
+      localStorage.removeItem("user");  
     }, 1000);
     setTimeout(() => {
       navigate("/");

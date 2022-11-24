@@ -24,10 +24,8 @@ const login = () => {
       })
 }    
 
-// useEffect(()=>{
-// },[]);
-
 const logIn = () => {
+
   const error = () => {
     if (
       !/^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/.test(
@@ -37,8 +35,6 @@ const logIn = () => {
       setMsgError("Introduce un e-mail válido");
       return;
     }
-
-    //Esta expresión regular ayuda a validar un password (numero + letras en este caso)
 
     if (credentials.password.length > 6) {
       if (!/[\d()+-]/g.test(credentials.password)) {
@@ -62,7 +58,7 @@ const logIn = () => {
 
   setTimeout(() => {
     navigate("/");
-  }, 2000);
+  }, 1000);
 };
     
   return (
@@ -70,7 +66,6 @@ const logIn = () => {
   <div className='login'>
 
     <div className='loginDesign'>
-      {/* <pre>{JSON.stringify(credentials, null,2)}</pre> */}
       <input  type='email' name='email' onChange={updateCredentials} lenght='30'/>
       <input  type='password'  name='password' onChange={updateCredentials} lenght='30'/>
       <div className="btn" onClick={()=>logIn()}>Login</div>
