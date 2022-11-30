@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const BASE_URL = "https://devos-ecommerce.herokuapp.com/api";
+const BASE_URL = "https://devos-ecommerce-laravel-backend-production.up.railway.app/api";
 
 const register = (name, surname, phone_number, payment_type, address, email, password) => {
   return axios.post(BASE_URL + "/register", {

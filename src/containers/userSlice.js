@@ -66,7 +66,7 @@ export const loginUser = (body) => async (dispatch) =>{
 
   try {
 
-    const user = await axios.post("https://devos-ecommerce.herokuapp.com/api/login",body);
+    const user = await axios.post("https://devos-ecommerce-laravel-backend-production.up.railway.app/api/login",body);
 
     const decodificada = jwtDecode(user.data.token);
 
