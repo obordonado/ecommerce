@@ -12,7 +12,7 @@ const Home = () => {
     }, 200);
   };
 
-  
+
   return (
     <div className="container">
       <div className="row">

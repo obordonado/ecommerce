@@ -33,7 +33,7 @@ const Register = () => {
         .then(
           () => {
             setTimeout(() => {
-              navigate("/login");
+              navigate("/icecommerce/login");
               window.location.reload();
             }, 1000);
           },

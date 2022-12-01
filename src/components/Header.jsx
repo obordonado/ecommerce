@@ -27,9 +27,9 @@ const Header = () => {
       }, 200);  
   }
 
-// useEffect(()=>{ 
-//   console.log("este es el log de useffect", credentials.token);  
-// });
+useEffect(()=>{ 
+  navigate ("/")  
+});
 
 
   if(credentials.token === "") {
@@ -56,6 +56,7 @@ const Header = () => {
         </div>
       </div>
     )
+    
 
   }else {
     
