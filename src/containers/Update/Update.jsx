@@ -1,35 +1,16 @@
-<<<<<<< HEAD
-import React from 'react'
-import './Register.scss'
-import { useSelector } from 'react-redux';
-import { userData } from '../userSlice';
-
-
-const Register = () => {
-  const datosUsuario = useSelector(userData);
-  return (
-    <div className='register'>
-     Register
-    </div>
-  )
-}
-
-export default Register
-=======
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useSelector } from "react-redux";
 import auth from "../auth.js";
-import "./Register.scss";
+import "./Update.scss";
 
-const Register = () => {
+const Update = () => {
+
   const [name, setName] = useState("");
   const [surname, setSurname] = useState("");
   const [phone_number, setPhone_number] = useState("");
+  const [password, setPassword] = useState("");
   const [payment_type, setPayment_type] = useState("");
   const [address, setAddress] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const [msgError, setMsgError] = useState("");
 
   const navigate = useNavigate();
@@ -39,19 +20,18 @@ const Register = () => {
 
     try {
       await auth
-        .register(
+        .update(
           name,
           surname,
           phone_number,
+          password,
           payment_type,
-          address,
-          email,
-          password
+          address,          
         )
         .then(
           () => {
             setTimeout(() => {
-              navigate("/icecommerce/login");
+              navigate("/");
               window.location.reload();
             }, 1000);
           },
@@ -71,7 +51,8 @@ const Register = () => {
         <div className="contenedor">
           <div className="form">
             <form onSubmit={handleRegister}>
-              <h2 className="register">Register</h2>
+              <h2 className="personal">Update personal information</h2>
+
               <input
                 required
                 type="text"
@@ -79,6 +60,7 @@ const Register = () => {
                 value={name}
                 onChange={(e) => setName(e.target.value)}
               />
+
               <input
                 required
                 type="text"
@@ -86,6 +68,8 @@ const Register = () => {
                 value={surname}
                 onChange={(e) => setSurname(e.target.value)}
               />
+              
+
               <input
                 required
                 type="text"
@@ -109,18 +93,12 @@ const Register = () => {
               />
               <input
                 required
-                type="email"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-              <input
-                required
                 type="password"
                 placeholder="Password"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />
+              <div className="contact">In case of any other information or need, please contact support@cream.com</div>
               <button className="submit" type="submit" value="Enviar">
                 Send
               </button>
@@ -133,5 +111,4 @@ const Register = () => {
   );
 };
 
-export default Register;
->>>>>>> master
+export default Update;

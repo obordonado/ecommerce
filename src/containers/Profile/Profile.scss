@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .profile{
     display: flex;
     align-items: center;
@@ -10,4 +11,62 @@ p{
     width: 10em;
     height: 10em;
     color: black;
+=======
+.profile {
+	width: 100vw;
+	height: 87vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(130deg, rgb(196, 182, 184), rgb(233, 174, 183), rgb(196, 182, 184));
+}
+
+.loginDesign {
+	width: 22em;
+	border-style: none;
+	border-radius: .5em;
+	text-align: center;	
+	border-radius: 1.5em;
+	padding: 1.5em;
+	box-shadow: 8px 0px 5px 5px;
+}
+
+::placeholder{
+	text-align: center;
+}
+
+.error {
+	text-align: center;
+	height: 1em;
+	width: 100%;
+	font-weight: bold;
+	font-size: x-small;
+	color: #f00;
+}
+
+.contact, .personal{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	margin-top: 1em;
+}
+
+.button{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 2em;
+	border-radius: .5em;
+	height: 2.5em;	
+	background: linear-gradient(130deg, rgb(255, 192, 203), rgb(255, 182, 193), rgb(255, 105, 180));
+}
+
+.button:hover {
+	background: linear-gradient(130deg, rgb(222, 255, 192), rgb(172, 253, 135), rgb(146, 241, 21));
+	color: #000;
+}
+input:hover {
+	background: linear-gradient(130deg, rgb(212, 205, 206), rgb(199, 173, 178), rgb(231, 226, 229));	
+>>>>>>> master
 }

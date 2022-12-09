@@ -1,0 +1,27 @@
+.body{
+    min-width: 360px;
+    background:linear-gradient(130deg,rgb(240, 235, 233), rgb(82, 61, 45),#555);
+    display: flex;    
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 87vh;
+}
+.inicio{
+    margin: .5em;
+}
+.card{
+    width: 22em;
+    height: 25em;
+}
+.card-body{
+    display: flex;
+    flex-direction: column;
+    background:linear-gradient(130deg,rgb(255,192,203), rgb(255,182,193),rgb(255,105,180));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.card-title{
+    text-align: center;
+}
