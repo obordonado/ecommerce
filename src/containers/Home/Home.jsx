@@ -1,15 +1,4 @@
-<<<<<<< HEAD
-import React from 'react'
-import './Home.scss'
 
-const Home = () => {
-  return (
-    <div className='home'>Home page</div>
-  )
-}
-
-export default Home
-=======
 import React from "react";
 import "./Home.scss";
 import { useNavigate } from "react-router";
@@ -92,4 +81,4 @@ const Home = () => {
 };
 
 export default Home;
->>>>>>> master
+
