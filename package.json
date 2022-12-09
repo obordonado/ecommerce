@@ -6,12 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-<<<<<<< HEAD
-    "preview": "vite preview"
-=======
     "preview": "vite preview",
     "deploy": "gh-pages -d dist"
->>>>>>> master
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.9.0",
@@ -29,10 +25,6 @@
     "@types/react": "^18.0.24",
     "@types/react-dom": "^18.0.8",
     "@vitejs/plugin-react": "^2.2.0",
-<<<<<<< HEAD
-=======
-    "gh-pages": "^4.0.0",
->>>>>>> master
     "sass": "^1.56.1",
     "vite": "^3.2.3"
   }
