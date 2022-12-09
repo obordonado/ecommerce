@@ -26,15 +26,14 @@ const Header = () => {
       navigate("/");
       }, 200);  
   }
+  // useEffect(()=>{ 
+    //   navigate ("/")  
+    // });
+    
+    
+    if(credentials.token === "") {      
 
-useEffect(()=>{ 
-  navigate ("/")  
-});
-
-
-  if(credentials.token === "") {
-
-    return (
+      return (
 
       <div className='header'>
         
@@ -64,11 +63,14 @@ useEffect(()=>{
       <div className="header">
       <img className='logo' src="https://obordonado.github.io/web/img/logo.jpg" alt="logo" />
       <div className="textLink" onClick={()=>navigate("/")}> Home </div>
-      <div className="textLink" onClick={()=>navigate("/profile")}> Personal settings </div>
+      <div className="textLink" onClick={()=>navigate("/profile")}> Personal info </div>
+      <div className="textLink" onClick={()=>navigate("/update")}> Update info </div>
+
       <div className="textLink" onClick={()=>out()} > Log out </div>
     </div>
     )
   }
+
 }
 
 export default Header;

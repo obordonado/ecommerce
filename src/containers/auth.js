@@ -20,6 +20,28 @@ const register = (name, surname, phone_number, payment_type, address, email, pas
     });
 };
 
+const update = (name, surname, phone_number, payment_type, address, email, password) => {
+  return axios.put(BASE_URL + "/edit", {
+
+        name,
+        surname,
+        phone_number,
+        payment_type,
+        address,
+        password
+    })
+    .then((response) => {
+      if (response.data.token) {
+        localStorage.setItem("user", JSON.stringify(response.data));
+      }
+      return response.data;
+    });
+};
+
+
+
+
+
 const login = (email, password) => {
     
     return axios.post(BASE_URL + "/login", {email,password})
@@ -42,7 +64,7 @@ const logout = () => {
 // };
 
 const auth = {
-  register,login,logout,//getCurrentUser
+  register,login,logout,update//getCurrentUser
 };
 
 

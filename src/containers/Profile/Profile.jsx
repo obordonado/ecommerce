@@ -1,93 +1,34 @@
-import React, { useState } from "react";
+import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import auth from "../auth.js";
+import { userData } from "../userSlice.js";
 import "./Profile.scss";
 
-const Register = () => {
-
-  const [phone_number, setPhone_number] = useState("");
-  const [payment_type, setPayment_type] = useState("");
-  const [address, setAddress] = useState("");
-  const [password, setPassword] = useState("");
-  const [msgError, setMsgError] = useState("");
+const Profile = (props) => {
 
   const navigate = useNavigate();
+  const credentials = useSelector(userData);
+  const myProfile = credentials.data;
 
-  const handleRegister = async (e) => {
-    e.preventDefault();
+  if (credentials === ""){
 
-    try {
-      await auth
-        .register(
-          phone_number,
-          payment_type,
-          address,          
-          password
-        )
-        .then(
-          () => {
-            setTimeout(() => {
-              navigate("/icecommerce/login");
-              window.location.reload();
-            }, 1000);
-          },
-          (error) => {
-            console.log(error);
-            setMsgError(error.response.data);
-          }
-        );
-    } catch (err) {
-      console.log(err);
-    }
-  };
-
-  return (
-    <div className="register">
-      <>
-        <div className="contenedor">
-          <div className="form">
-            <form onSubmit={handleRegister}>
-              <h2 className="personal">Update personal information</h2>
-
-              <input
-                required
-                type="text"
-                placeholder="Phone number"
-                value={phone_number}
-                onChange={(e) => setPhone_number(e.target.value)}
-              />
-              <input
-                required
-                type="text"
-                placeholder="Bizum / Paypal"
-                value={payment_type}
-                onChange={(e) => setPayment_type(e.target.value)}
-              />
-              <input
-                required
-                type="text"
-                placeholder="Address"
-                value={address}
-                onChange={(e) => setAddress(e.target.value)}
-              />
-              <input
-                required
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-              <div className="contact">In case of any other information or need, please contact support@cream.com</div>
-              <button className="submit" type="submit" value="Enviar">
-                Send
-              </button>
-            </form>
-            <div className="error">{msgError}</div>
+    return (
+      <div className="profile">
+          <div className="contenedor">        
+            <div className="name"> SE CAMBIARÁ PAGINA A HOME </div>
           </div>
-        </div>
-      </>
-    </div>
-  );
+      </div>
+    );
+
+  }else{
+    
+    return(
+      <div className="profile"> SALE ESTA PORQUE TIENE CREDENCIALES
+
+      <div className="name">{props.data.name}</div>
+      </div>
+    );
+  }
 };
 
-export default Register;
+export default Profile;
